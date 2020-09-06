@@ -1,0 +1,62 @@
+#Functional Testing 
+
+#Testing all aspects of app from POV of 6 user types; 
+    Admin
+    Co-admin
+    Teacher
+    Co-teacher
+    Student
+    Family
+
+#Your Assignment 
+
+    Create automated tests from tests that you documented in the student profile test plan assignment. 
+
+# Based upon the information provided, develop automated tests using the following criteria; 
+    ● Write the tests in an object-oriented language. 
+    ● Commit code to a repo so that it can be reviewed. 
+
+#Evaluation Criteria 
+    ● Functionality — Does your program work according to the specifications of the problem? 
+    ● Language Use — Do you make good use of the features available in the language you chose? 
+
+#ACTIONABLE STEPS:
+    1. Install Selenium in order to create automated tests
+
+        ACCESSING/TAKING ASSESSMENTS:
+            GOAL: 
+                LOGIN: 
+                    Step 1: Selenium should go to https://my.otus.com/ 
+
+                    Step 2: Find the DOM element related to the email box (<input> with aria-label="email")
+
+                        - Once the DOM element is found, click into the input
+                        - Enter a pre-determined, valid email address into the input
+
+                    Step 3: Enter a password
+
+                    Step 4: Click 'Log In'
+
+                FIND ASSESSMENT NAVBAR: 
+
+                    Step 1: Find the DOM element related to the 'Assessment' navigation item
+                        -Once the DOM element is found, click it
+
+                CLICK THROUGH EACH ASSESSMENT TABLE FIELD ITEM:
+
+                    Step 1. Find the DOM element related to 'Tech Challenge' 
+                        -Once the DOM element is found, click it
+
+                    Step 2. Repeat steps 1 & 2 for each DOM element field item under 'Title' column, 'Due Date' column, 'Points' column, and 'Status' column
+
+                CLICK ON ALL CLASSES DROPDOWN:
+
+                    Step 1. Find the DOM element related to the 'All Classes' Dropdown
+                        - Once the DOM element is found, click it
+                        - Repeat for each item in the dropdown  
+
+
+
+
+
+#ALSO, THERE WILL BE AN INTEGRATION TEST - THAT IS API CALLS, RIGHT? IS THAT JUST MAKING FUNCTIONS? 
