@@ -12,7 +12,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
     //Login Setup
         console.log('---Setting up the test, beginning by logging in with pre-determined user--- \n')
             await driver.get('https://my.otus.com/login');
-            await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='email']")), 10000);
+            await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='email']")), 9000);
             await driver.findElement(By.xpath("//input[@placeholder='email']")).sendKeys('mgrogoff@gmail.com', Key.RETURN);
             await driver.findElement(By.xpath("//input[@placeholder='password']")).sendKeys('M1a2z3e4h5?', Key.RETURN);
 
@@ -23,11 +23,11 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
             const button = await driver.findElement(By.xpath(assignmentIconPath));
 
             button.click(); //1st click
-            await sleep(700);
+            await sleep(600);
             button.click(); //2nd click
-            await sleep(700);
+            await sleep(600);
             button.click(); //3rd click
-            await sleep(700);
+            await sleep(600);
         
         //Click the first field under Title column 3 times
         console.log('---Step 1.i part 2: This is the part where we click on the first field item under the Title column 3 times--- \n');
@@ -44,15 +44,15 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
         //Create the close button and click/close 2 more times
             const closeBtn = await driver.findElement(By.xpath(closeBtnLink), 2000); //Create 'X' btn
             closeBtn.click(); 
-            await sleep(1000);
+            await sleep(600);
             firstTitleElemBtn.click(); //2nd click
-            await sleep(1000);
+            await sleep(600);
             closeBtn.click(); //2nd close 
-            await sleep(1000);
+            await sleep(600);
             firstTitleElemBtn.click(); //3rd click
-            await sleep(1000);
+            await sleep(600);
             closeBtn.click(); //3rd close
-            await sleep(1000);
+            await sleep(600);
 
 //Step 1.i part 3 - Click through the second field under Title column three times
         console.log('---Step 1.i, part 3: Click through the second field under the Title column 3 times--- \n');
@@ -646,14 +646,14 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
         await sleep(3000);
 
         dropdownBtn.click();
-        await sleep(3000);
+        await sleep(6000);
 
     console.log('---Click on QA Tech Challenge dropdown item--- \n');
 
         const qaBtn = await driver.findElement(By.xpath("//main[@class='logged-in-user']//li[2]"));
 
         qaBtn.click();
-        await sleep(3000);
+        await sleep(6000);
 
     console.log('---PROCESS OF TESTING THE FIRST SECTION (ASSESSMENTS PAGE) IS COMPLETE.--- \n');
     }
@@ -665,44 +665,3 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
       await driver.quit();
     }
 })();
-
-
-//STEP 2:  Adding resources to my bookshelf
-
-// (async function bookshelf() {
-//     let driver = await new Builder().forBrowser('chrome').build();
-
-//     function sleep(ms) {
-//         return new Promise(resolve => setTimeout(resolve, ms));
-//     }
-
-//     try {
-//         console.log('---Setting up the test, beginning by logging in with pre-determined user--- \n')
-//         await driver.get('https://my.otus.com/login');
-//         await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='email']")), 20000);
-//         await driver.findElement(By.xpath("//input[@placeholder='email']")).sendKeys('mgrogoff@gmail.com', Key.RETURN);
-//         await driver.findElement(By.xpath("//input[@placeholder='password']")).sendKeys('M1a2z3e4h5?', Key.RETURN);
-
-//         console.log('---Now we are on the Home page. Start by clicking the navigation bar item tied to My Bookshelf. Running the click event 3x in a row to test the navbar item button click event--- \n')
-        
-//         // const bookIconPath = "//li[6]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']";
-       
-//         await driver.wait(until.elementLocated(By.xpath(bookIconPath)), 20000);
-        
-//         const button = await driver.findElement(By.xpath(bookIconPath));
-
-//         button.click(); //1st click
-//         await sleep(1000);
-//         button.click(); //2nd click
-//         await sleep(1000);
-//         button.click(); //3rd click
-//         await sleep(1000);
-//     }
-//     catch(err) {
-//         console.log('----ERROR--- \n');
-//         console.log(err.message);
-//     }
-//     finally {
-//       await driver.quit();
-//     }
-// })();
