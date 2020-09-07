@@ -2,9 +2,14 @@
   "name": "functional-testing-otus-interview",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "assignment": "cd src && node index.js",
+    "bookshelf": "cd src && node bookshelf.js",
+    "classboard": "cd src && node classboard.js",
+    "grades": "cd src && node grades.js",
+    "lessons": "cd src && node lessons.js"
   },
   "repository": {
     "type": "git",
