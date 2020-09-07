@@ -19,7 +19,6 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
         console.log('---Click the navbar item tied to My Bookshelf 3 times--- \n');
         
         //Section 2, Step f (c-e are not needed in the test):
-
             const bookshelfIconPath = "//li[5]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']//*[name()='path' and contains(@fill,'currentCol')]";
 
             await driver.wait(until.elementLocated(By.xpath(bookshelfIconPath)), 4000);
@@ -34,7 +33,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
     //SECTION 2, STEP g.ii: 
         //Click on the Shared With Me sub-navigation item 3 times
 
-        console.log('---Click on the Shared With Me sub-navigation item three times--- \n');
+        console.log('---Click the Shared With Me sub-navigation item 3 times--- \n');
 
             const sharedLink = "//div[@class='navbar secondary-nav ng-star-inserted']//li[1]//a[1]";
 
@@ -103,6 +102,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 
         //Section 2, Step g.iii:
             //Click on the My Bookshelf sub-nav item 3x
+            
 
         //Section 2, Step g.iii.2:
             // Click the + button and add a Resource
