@@ -59,12 +59,12 @@ const { openClose } = require('../helpers/openclose');
 
         console.log('---Click the third field once more and press the Start button---\n');
             await thirdTitleElemBtn.click();
-            await driver.sleep(4000);
+            await driver.sleep(3000);
             const startBtn2 = await driver.findElement(By.xpath("//span[contains(text(),'Start')]"), 3000);
             await startBtn2.click();
 
         console.log('---Type a word into the text area. Click Save and Exit button only.---\n');
-            await driver.sleep(4000);
+            await driver.sleep(3000);
             await driver.findElement(By.tagName("textarea")).sendKeys('Notes', Key.RETURN);  
             const saveExitBtn2 = await driver.findElement(By.xpath("//span[contains(text(),'Save & Exit')]"), 5000);       
             await saveExitBtn2.click();
@@ -97,10 +97,10 @@ const { openClose } = require('../helpers/openclose');
             await openClose(driver, secondDueBtn, closeSecondDueBtn);
 
         console.log('---Click the field once more in order to press the Start button---\n');
-//NOW THE ERRORS ARE HERE -- LEFT OFF HERE FOR DEBUGGING. 
+//NOW ERRORS ARE HERE. It says element is not interactable.
             await driver.sleep(5000);
             await secondDueBtn.click();
-            const startBtn3 = await driver.findElement(By.xpath("//span[contains(text(),'Start')]"), 18000);
+            const startBtn3 = await driver.findElement(By.xpath("//span[contains(text(),'Start')]"), 8000);
             await startBtn3.click();
             await driver.sleep(1000);
 
@@ -110,8 +110,8 @@ const { openClose } = require('../helpers/openclose');
             await saveExitBtn3.click();
 
         console.log('---The Save and Exit button has been clicked --- \n');
-            const noBtn3 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 8000);
-            await noBtn3.click();
+            // const noBtn3 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 8000);
+            await noBtn.click();
             await driver.findElement(By.tagName("textarea")).sendKeys('Enter text here', Key.RETURN);
             await saveExitBtn3.click();
 
@@ -136,8 +136,8 @@ const { openClose } = require('../helpers/openclose');
             await saveExitBtn4.click(); 
 
         console.log('---The Save and Exit button has been clicked --- \n');
-            const noBtn4 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
-            await noBtn4.click();
+            // const noBtn4 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
+            await noBtn.click();
             await driver.findElement(By.tagName("textarea")).sendKeys('Enter text here', Key.RETURN);
             await saveExitBtn4.click();
 
@@ -170,8 +170,8 @@ const { openClose } = require('../helpers/openclose');
             await savePtBtn.click();
             
         console.log('---The Save and Exit button has been clicked --- \n');
-            const noPtBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
-            await noPtBtn.click();
+            // const noPtBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
+            await noBtn.click();
             await driver.findElement(By.tagName("textarea")).sendKeys('Count', Key.RETURN);
             await savePtBtn.click();
             
@@ -196,8 +196,8 @@ const { openClose } = require('../helpers/openclose');
             await savePtBtn2.click();
             
         console.log('---The Save and Exit button has been clicked --- \n');
-            const noPtBtn2 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
-            await noPtBtn2.click();
+            // const noPtBtn2 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
+            await noBtn.click();
             await driver.findElement(By.tagName("textarea")).sendKeys('Title', Key.RETURN);
             await savePtBtn2.click();
             
@@ -230,8 +230,8 @@ const { openClose } = require('../helpers/openclose');
             await saveStatBtn.click();
             
         console.log('---The Save and Exit button has been clicked --- \n');
-            const noStatBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
-            await noStatBtn.click();
+            // const noStatBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
+            await noBtn.click();
             await driver.findElement(By.tagName("textarea")).sendKeys('Status', Key.RETURN);
             await saveStatBtn.click();
 
@@ -256,8 +256,8 @@ const { openClose } = require('../helpers/openclose');
             await saveStatBtn2.click();
             
         console.log('---The Save and Exit button has been clicked --- \n');
-            const noStatBtn2 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
-            await noStatBtn2.click();
+            // const noStatBtn2 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
+            await noBtn.click();
             await driver.findElement(By.tagName("textarea")).sendKeys('Title', Key.RETURN);
             await saveStatBtn2.click();
             
