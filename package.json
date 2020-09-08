@@ -5,7 +5,7 @@
   "main": "src/test-files/assessment.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "assessment": "cd src/test-files && node tassessment.js",
+    "assessment": "cd src/test-files && node assessment.js",
     "bookshelf": "cd src/test-files && node bookshelf.js",
     "classboard": "cd src/test-files && node classboard.js",
     "grades": "cd src/test-files && node grades.js",

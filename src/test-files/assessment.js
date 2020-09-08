@@ -1,29 +1,22 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
+const { login } = require('../helpers/login');
+const { multiClick } = require('../helpers/multiclick');
 
 // SECTION 1: Assessment Check 
 (async function assessment() {
     let driver = await new Builder().forBrowser('chrome').build();
 
     try {
-    //Login Setup
         console.log('---Begin by logging in with pre-determined user--- \n')
-            await driver.get('https://my.otus.com/login');
-            await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='email']")), 9000);
-            await driver.findElement(By.xpath("//input[@placeholder='email']")).sendKeys('mgrogoff@gmail.com', Key.RETURN);
-            await driver.findElement(By.xpath("//input[@placeholder='password']")).sendKeys('M1a2z3e4h5?', Key.RETURN);
-
+           await login(driver);
+           
         console.log('---Click the navigation bar item tied to Assessments 3 times to test its click event--- \n')
         
             const assignmentIconPath = "//li[6]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']";
             await driver.wait(until.elementLocated(By.xpath(assignmentIconPath)), 10000);
           
             const button = await driver.findElement(By.xpath(assignmentIconPath));
-            await button.click(); 
-            await driver.sleep(1000);
-            await button.click(); 
-            await driver.sleep(1000);
-            await button.click(); 
-            await driver.sleep(1000);
+            await multiClick(driver, button); //if I don't pass in a # for 3rd param, it'll default to 1000ms
 
         console.log('---Step 1.i part 2: Click the first field item under the Title column 3 times--- \n');
 
