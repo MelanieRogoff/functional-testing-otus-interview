@@ -17,20 +17,14 @@ const { openClose } = require('../helpers/openclose');
 
         console.log('---Step 1.i part 2: Click the first field item under the Title column 3 times--- \n');
             const firstTitleElemBtn = await driver.findElement(By.xpath("//td[contains(text(),'Tech Challenge - Student Profile')]"));
-           
             const closeBtn = await driver.findElement(By.xpath("//div[@class='reveal otus-new-modal small retake-assessment-modal']//div[@class='otus-new-modal__close-button smallX ng-star-inserted']//*[local-name()='svg']//*[name()='path' and contains(@class,'close-butt')]"), 2000); 
-
             await driver.wait(until.elementLocated(By.xpath("//td[contains(text(),'Tech Challenge - Student Profile')]")), 10000);
-           
             await openClose(driver, firstTitleElemBtn, closeBtn); 
 
         console.log('---Step 1.i, part 3: Click through the second field under Title 3 times--- \n');
             await driver.wait(until.elementLocated(By.xpath("//td[contains(text(),'Tech Challenge - Integration Test Automation')]")), 2000);
-            
             const openSecondBtn = await driver.findElement(By.xpath("//td[contains(text(),'Tech Challenge - Integration Test Automation')]"));
-            
             const closeSecondBtn = await driver.findElement(By.xpath("//div[@class='reveal otus-new-modal small instructions-modal']//div[@class='otus-new-modal__close-button smallX ng-star-inserted']//*[local-name()='svg']"), 3000);
-           
             await openClose(driver, openSecondBtn, closeSecondBtn, 3, 4000); 
 
         console.log('---Click the second field once more---\n');
