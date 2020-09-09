@@ -2,9 +2,31 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const { login } = require('../helpers/login');
 const { multiClick } = require('../helpers/multiclick');
 const { openClose } = require('../helpers/openclose');
+const chrome = require('selenium-webdriver/chrome');
+const firefox = require('selenium-webdriver/firefox');
+/**
+ * Description: assessment() is exported so that it can be called in the drivers.js file along with all other test functions
+ * @param {string} browserName - (ie: Firefox, Chrome)
+ */
+async function assessment(browserName) {
 
-(async function assessment() {
-    let driver = await new Builder().forBrowser('chrome').build();
+    const screen = {
+        width: 1999,
+        height: 808
+    }
+
+    const headlessVar = process.env.HEADLESS; 
+    let driver; 
+
+    if (headlessVar === 'true') {
+        driver = await new Builder()
+        .forBrowser(browserName)
+        .setChromeOptions(new chrome.Options().headless().windowSize(screen)) 
+        .setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
+        .build();
+    } else {
+        driver = await new Builder().forBrowser(browserName).build();
+    }
 
     try {
         console.log('---Begin by logging in with pre-determined user--- \n');
@@ -331,4 +353,6 @@ const { openClose } = require('../helpers/openclose');
     finally {
         await driver.quit();
     }
-})();
+}
+
+module.exports = { assessment };
