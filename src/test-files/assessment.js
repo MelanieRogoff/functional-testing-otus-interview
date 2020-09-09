@@ -165,7 +165,6 @@ const { openClose } = require('../helpers/openclose');
             await openClose(driver, pt2Btn, closePt2Btn);
 
         console.log('---Click the second Points field once more and press the Start button---\n');
-    //ERRORS ARE HERE NOW -- 
             await driver.sleep(4000);
             await pt2Btn.click();
             await driver.sleep(4000);
