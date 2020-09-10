@@ -5,7 +5,7 @@ const { openClose } = require('../helpers/openclose');
 const { getDriver } = require('../helpers/getDriver');
 
 /**
- * Description: assessment() is exported so that it can be called in the drivers.js file along with all other test functions
+ * Description: assessment() tests the Assessments section of the coding challenge.
  * @param {string} browserName - (ie: Firefox, Chrome)
  */
 async function assessment(browserName) {

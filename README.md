@@ -24,7 +24,7 @@
 
 # BUG FOUND:
 
- - When logging in with invalid credentials, the user can see an alert that notifies them of this. Upon entering the correct credentials, the user logs in and can still see the aforementioned alert, and the alert does not disappear unless the user manually clicks the Close button.
+ - When logging in with invalid credentials, an alert displays that notifies the user of the invalid credentials. Upon entering the correct credentials and logging in, however, the alert still displays. The alert does not disappear unless the user manually clicks the Close button.
 
 # INCOMPLETE: 
 
@@ -32,8 +32,8 @@
 
  - Testing Folder functionality in the My Bookshelf section
 
- - Testing the class board 
+ - Testing the hover functionality in order to trigger the triple dot area in the resource row in My Bookshelf (hover seems to only be accessible through Java/Python. This test uses JavaScript only)
 
- - Testing the assigned lessons
+ - Testing the class board 
 
  - Testing the gradebook
