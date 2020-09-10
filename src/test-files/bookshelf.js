@@ -125,77 +125,77 @@ async function bookshelf(browserName) {
             await threeDotClick(driver);
 
         console.log('---Click Share, then click Cancel --- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[@id='outerWrapper']//div[@class='ui-overlaypanel-content']//div[1]//span[1]")), 2000);
-            const share = await driver.findElement(By.xpath("//div[@id='outerWrapper']//div[@class='ui-overlaypanel-content']//div[1]//span[1]"));
-            await multiClick(driver, share, 1);
-            const cancelBtn = await driver.findElement(By.xpath("//div[4]//div[1]//div[1]//div[1]//button[1]"));
-            await multiClick(driver, cancelBtn, 1);
+            // await driver.wait(until.elementLocated(By.xpath("//div[@id='outerWrapper']//div[@class='ui-overlaypanel-content']//div[1]//span[1]")), 2000);
+            // const share = await driver.findElement(By.xpath("//div[@id='outerWrapper']//div[@class='ui-overlaypanel-content']//div[1]//span[1]"));
+            // await multiClick(driver, share, 1);
+            // const cancelBtn = await driver.findElement(By.xpath("//div[4]//div[1]//div[1]//div[1]//button[1]"));
+            // await multiClick(driver, cancelBtn, 1);
 
         console.log('---Click on the 3 dots in the Resource table again--- \n');
-            await threeDotClick(driver);
+            // await threeDotClick(driver);
 
         console.log('---Click Edit, then click the close button--- \n');
-            const editBtn = await driver.findElement(By.xpath("//div[@class='my-bookshelf__resources']//div[2]//span[1]"));
-            await multiClick(driver, editBtn, 1);
-            const closeEditBtn = await driver.findElement(By.xpath("//div[@class='otus-new-modal__close-button smallX ng-star-inserted']//*[local-name()='svg']"));
-            await multiClick(driver, closeEditBtn, 1);
+            // const editBtn = await driver.findElement(By.xpath("//div[@class='my-bookshelf__resources']//div[2]//span[1]"));
+            // await multiClick(driver, editBtn, 1);
+            // const closeEditBtn = await driver.findElement(By.xpath("//div[@class='otus-new-modal__close-button smallX ng-star-inserted']//*[local-name()='svg']"));
+            // await multiClick(driver, closeEditBtn, 1);
 
         console.log('---Click on the 3 dots in the Resource table again and click Move--- \n');
-            await threeDotClick(driver);
-            const moveBtn = await driver.findElement(By.xpath("//div[@id='outerWrapper']//div[3]//span[1]"));
-            await multiClick(driver, moveBtn, 1);
+        //     await threeDotClick(driver);
+        //     const moveBtn = await driver.findElement(By.xpath("//div[@id='outerWrapper']//div[3]//span[1]"));
+        //     await multiClick(driver, moveBtn, 1);
 
-        console.log('---Click Done--- \n');
-            const doneBtn = await driver.findElement(By.xpath("//div[@class='reveal otus-modal modal-fixed-medium otus-modal-top-radius']//div[@class='nav-right']//button[@class='btn btn-light small-size ng-star-inserted']"));
-            await multiClick(driver, doneBtn, 1);
+        // console.log('---Click Done--- \n');
+        //     const doneBtn = await driver.findElement(By.xpath("//div[@class='reveal otus-modal modal-fixed-medium otus-modal-top-radius']//div[@class='nav-right']//button[@class='btn btn-light small-size ng-star-inserted']"));
+        //     await multiClick(driver, doneBtn, 1);
         
-        console.log('---Close the notification window--- \n');
-            const notify = await driver.findElement(By.xpath("//div[@class='close-button ng-star-inserted']"));
-            await multiClick(driver, notify, 1);
+        // console.log('---Close the notification window--- \n');
+        //     const notify = await driver.findElement(By.xpath("//div[@class='close-button ng-star-inserted']"));
+        //     await multiClick(driver, notify, 1);
 
-        console.log('---Click cancel--- \n');
-            const canceler = await driver.findElement(By.xpath("//div[19]//div[1]//div[1]//div[1]//button[1]"));
-            await multiClick(driver, canceler, 1);
+        // console.log('---Click cancel--- \n');
+        //     const canceler = await driver.findElement(By.xpath("//div[19]//div[1]//div[1]//div[1]//button[1]"));
+        //     await multiClick(driver, canceler, 1);
 
-        console.log('---Final step for this page - Click on the three dots, click Delete and cancel the deletion--- \n');
-            await threeDotClick(driver);
-            const deleteBtn = await driver.findElement(By.xpath("//div[@id='outerWrapper']//div[4]//span[1]"))
-            await multiClick(driver, deleteBtn, 1);
-            await driver.sleep(4000);
-            const cancelDelete = await driver.findElement(By.xpath("//button[@class='button confirm-alert-button ng-star-inserted']"));
-            await multiClick(driver, cancelDelete, 1);
+        // console.log('---Final step for this page - Click on the three dots, click Delete and cancel the deletion--- \n');
+        //     await threeDotClick(driver);
+        //     const deleteBtn = await driver.findElement(By.xpath("//div[@id='outerWrapper']//div[4]//span[1]"))
+        //     await multiClick(driver, deleteBtn, 1);
+        //     await driver.sleep(4000);
+        //     const cancelDelete = await driver.findElement(By.xpath("//button[@class='button confirm-alert-button ng-star-inserted']"));
+        //     await multiClick(driver, cancelDelete, 1);
 
-        console.log('---Click on Google Drive sub-navigation panel 3 times--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[@class='navbar secondary-nav ng-star-inserted']//li[3]//a[1]//span[1]")), 4000);
-            const googleDriveBtn = await driver.findElement(By.xpath("//div[@class='navbar secondary-nav ng-star-inserted']//li[3]//a[1]//span[1]"));
-            await multiClick(driver, googleDriveBtn);
-            await driver.sleep(4000);
+        // console.log('---Click on Google Drive sub-navigation panel 3 times--- \n');
+        //     await driver.wait(until.elementLocated(By.xpath("//div[@class='navbar secondary-nav ng-star-inserted']//li[3]//a[1]//span[1]")), 4000);
+        //     const googleDriveBtn = await driver.findElement(By.xpath("//div[@class='navbar secondary-nav ng-star-inserted']//li[3]//a[1]//span[1]"));
+        //     await multiClick(driver, googleDriveBtn);
+        //     await driver.sleep(4000);
 
-        console.log('---Click on the first row in the table in Google Drive view--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//tr[@class='ng-star-inserted']")), 8000);
-            const googleRow = await driver.findElement(By.xpath("//tr[@class='ng-star-inserted']"));
-            await multiClick(driver, googleRow, 1);
+        // console.log('---Click on the first row in the table in Google Drive view--- \n');
+        //     await driver.wait(until.elementLocated(By.xpath("//tr[@class='ng-star-inserted']")), 8000);
+        //     const googleRow = await driver.findElement(By.xpath("//tr[@class='ng-star-inserted']"));
+        //     await multiClick(driver, googleRow, 1);
 
-        console.log('---Enter 123, AB12, AB12!? in the search box and press enter--- \n');
-            await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('123', Key.RETURN);
-            await driver.sleep(4000);
-            await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('AB12', Key.RETURN);
-            await driver.sleep(4000);
-            await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('AB12!?', Key.RETURN);
-            await driver.sleep(4000);
+        // console.log('---Enter 123, AB12, AB12!? in the search box and press enter--- \n');
+        //     await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('123', Key.RETURN);
+        //     await driver.sleep(4000);
+        //     await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('AB12', Key.RETURN);
+        //     await driver.sleep(4000);
+        //     await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('AB12!?', Key.RETURN);
+        //     await driver.sleep(4000);
 
-        console.log('---Click on the Shared with Me tab within the page--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='otus-button-group dark ng-star-inserted']")), 5000);
-            const sharedTab = await driver.findElement(By.xpath("//button[@class='otus-button-group dark ng-star-inserted']")); 
-            await multiClick(driver, sharedTab, 1);
+        // console.log('---Click on the Shared with Me tab within the page--- \n');
+        //     await driver.wait(until.elementLocated(By.xpath("//button[@class='otus-button-group dark ng-star-inserted']")), 5000);
+        //     const sharedTab = await driver.findElement(By.xpath("//button[@class='otus-button-group dark ng-star-inserted']")); 
+        //     await multiClick(driver, sharedTab, 1);
             
-        console.log('---Click on the first row in the table in Shared with Me view--- \n');
-            const firstSharedRow = await driver.findElement(By.xpath("//tr[@class='ng-star-inserted']"));
-            await multiClick(driver, firstSharedRow, 1);
+        // console.log('---Click on the first row in the table in Shared with Me view--- \n');
+        //     const firstSharedRow = await driver.findElement(By.xpath("//tr[@class='ng-star-inserted']"));
+        //     await multiClick(driver, firstSharedRow, 1);
 
-        console.log('---FINAL STEP: Click on the Google Drive tab--- \n');
-            const driveTab = await driver.findElement(By.xpath('//button[contains(text(), "My Drive")]'));
-            await multiClick(driver, driveTab, 1);
+        // console.log('---FINAL STEP: Click on the Google Drive tab--- \n');
+        //     const driveTab = await driver.findElement(By.xpath('//button[contains(text(), "My Drive")]'));
+        //     await multiClick(driver, driveTab, 1);
 
         console.log('---Test is complete--- \n');
     }
