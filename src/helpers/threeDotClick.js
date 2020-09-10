@@ -1,10 +1,9 @@
 
 const { By, until } = require('selenium-webdriver');
 const { multiClick } = require('./multiclick');
-
 /**
  * 
- * @param {string} driver - (ie: Chrome, Firefox) 
+ * @param {string} driver - Pass Selenium Webdriver object here
  */
 async function threeDotClick(driver) {
     await driver.wait(until.elementLocated(By.xpath("//td[@class='bookshelf-table__column2 ng-star-inserted']")), 5000);

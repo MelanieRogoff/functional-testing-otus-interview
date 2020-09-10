@@ -2,9 +2,10 @@
 const chrome = require('selenium-webdriver/chrome');
 const firefox = require('selenium-webdriver/firefox');
 const { Builder } = require('selenium-webdriver');
-
+/**
+ * @param {string} browserName - (ie: Chrome, Firefox) 
+ */
 async function getDriver(browserName) {
-
     const screen = {
         width: 1999,
         height: 808

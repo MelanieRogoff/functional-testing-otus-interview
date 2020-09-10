@@ -135,7 +135,6 @@ async function bookshelf(browserName) {
             // upload.sendKeys("computer.png");  
 
         console.log('---Click on the Resource dropdown line item --- \n');
-            await driver.sleep(4000);
             await dropdown(driver);
 
         console.log('---Click attachment button, enter www.google.com as the link, Google as the link name, and press Save --- \n');

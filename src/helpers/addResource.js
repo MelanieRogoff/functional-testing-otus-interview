@@ -1,9 +1,8 @@
 
 const { By, until } = require('selenium-webdriver');
 const { multiClick } = require('./multiclick');
-
 /**
- * @param {string} path - (ie: "///div[@class='ellipses-button']") 
+ * @param {string} driver - Pass Selenium Webdriver object here
  */
 async function addResource(driver) {
     await driver.wait(until.elementLocated(By.xpath("//div[@class='ellipses-button']")), 3000);
