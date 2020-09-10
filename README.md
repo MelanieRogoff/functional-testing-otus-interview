@@ -1,11 +1,11 @@
 # functional-testing-otus-interview
 
-#FUNCTIONAL TEST - OTUS INTERVIEW
-    - Suite of functional tests utilizing JavaScript and Selenium. 
+# FUNCTIONAL TEST - OTUS INTERVIEW
+ - Suite of functional tests utilizing JavaScript and Selenium. 
     
-    - Creates and runs automated tests for various situations and areas of the Otus app per coding challenge instructions. 
+ - Creates and runs automated tests for various situations and areas of the Otus app per coding challenge instructions. 
 
-# FOR INSTALLATION (WORKS FOR CHROME AND FIREFOX ONLY):
+# FOR INSTALLATION (CHROME & FIREFOX ONLY):
 
 - Install ChromeDriver with Google Chrome Version 85.0.4183.83 
 (http://chromedriver.storage.googleapis.com/index.html?path=85.0.4183.83/)
@@ -14,7 +14,7 @@
 
 - npm install
 
-#DEVELOPMENT:
+# DEVELOPMENT:
 - RUN LOCALLY IN HEADLESS MODE:
     - npm run seleniumStartHeadless
 
@@ -22,20 +22,18 @@
     - npm run seleniumStart
 
 
-#BUGS FOUND:
-    - Audio playback (when recording audio file for the My Bookshelf section) does not work
+# BUG FOUND:
 
-    - When logging in with invalid credentials, the user can see an alert that notifies them of this. Upon entering the correct credentials, the user logs in and can still see the aforementioned alert, and the alert does not disappear unless the user manually clicks the Close button.
+ - When logging in with invalid credentials, the user can see an alert that notifies them of this. Upon entering the correct credentials, the user logs in and can still see the aforementioned alert, and the alert does not disappear unless the user manually clicks the Close button.
 
-#INCOMPLETE: 
-    - Testing file upload in My Bookshelf section
+# INCOMPLETE: 
 
-    - Testing photo and video upload in My Bookshelf section
+ - Testing all Resource Types except for Google Drive in the My Bookshelf section
 
-    - Testing add page button in My Bookshelf section
+ - Testing Folder functionality in the My Bookshelf section
 
-    - Testing the class board 
+ - Testing the class board 
 
-    - Testing the assigned lessons
+ - Testing the assigned lessons
 
-    - Testing the gradebook
+ - Testing the gradebook

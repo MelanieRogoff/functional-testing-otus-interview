@@ -49,6 +49,7 @@ async function assessment(browserName) {
         console.log('---The Save and Exit button has been clicked. Click No button--- \n');
             const noBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
             await multiClick(driver, noBtn, 1);
+            await driver.sleep(6000);
             
         console.log('---Type a word into the textarea, click Save and Exit button, then click the Yes button--- \n');
             await driver.findElement(By.tagName("textarea")).sendKeys('Save', Key.RETURN);
@@ -70,9 +71,9 @@ async function assessment(browserName) {
             await startBtn2.click();
 
         console.log('---Type a word into the text area. Click Save and Exit button only.---\n');
-            await driver.sleep(3000);
+            await driver.sleep(6000);
             await driver.findElement(By.tagName("textarea")).sendKeys('Notes', Key.RETURN);  
-            const saveExitBtn2 = await driver.findElement(By.xpath("//span[contains(text(),'Save & Exit')]"), 4000);       
+            const saveExitBtn2 = await driver.findElement(By.xpath("//span[contains(text(),'Save & Exit')]"), 2000);       
             await saveExitBtn2.click();
             
         console.log('---The Save and Exit button has been clicked --- \n');
@@ -81,6 +82,7 @@ async function assessment(browserName) {
             await noBtn2.click();
 
         console.log('---Enter a word into the text area--- \n');
+            await driver.sleep(4000);
             await driver.findElement(By.tagName("textarea")).sendKeys('Element', Key.RETURN);     
             await saveExitBtn2.click();
             await driver.sleep(1000);
@@ -119,8 +121,10 @@ async function assessment(browserName) {
         console.log('---The Save and Exit button has been clicked --- \n');
             const noBtn3 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 8000);
             await noBtn3.click();
+            await driver.sleep(4000);
             await driver.findElement(By.tagName("textarea")).sendKeys('Enter text here', Key.RETURN);
             await saveExitBtn3.click();
+            await driver.sleep(4000);
 
         console.log('---Click the Yes button--- \n');
             const yesBtn3 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[1]//button[1]"), 8000);
@@ -145,6 +149,7 @@ async function assessment(browserName) {
             const saveExitBtn4 = await driver.findElement(By.xpath("//span[contains(text(),'Save & Exit')]"), 6000);
             await driver.findElement(By.tagName("textarea")).sendKeys('Due', Key.RETURN);
             await saveExitBtn4.click(); 
+            await driver.sleep(4000);
 
         console.log('---The Save and Exit button has been clicked --- \n');
             const noBtn4 = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 6000);
@@ -159,6 +164,7 @@ async function assessment(browserName) {
         console.log('---All three fields have been checked under Due Date column--- \n');
 
         console.log('---Step 1.i, part 6a: Click through the first Points field item 3 times--- \n');
+            await driver.sleep(4000);
             await driver.wait(until.elementLocated(By.xpath("//tr[1]//td[4]")), 6000);
             const pt1Btn = await driver.findElement(By.xpath("//tr[1]//td[4]"));        
             const closePt1Btn = await driver.findElement(By.xpath("//div[@class='reveal otus-new-modal small retake-assessment-modal']//div[@class='otus-new-modal__close-button smallX ng-star-inserted']//*[local-name()='svg']//*[name()='path' and contains(@class,'close-butt')]"), 4000);

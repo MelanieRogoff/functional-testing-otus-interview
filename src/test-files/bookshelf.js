@@ -2,10 +2,8 @@ const { By, Key, until } = require('selenium-webdriver');
 const { login } = require('../helpers/login');
 const { multiClick } = require('../helpers/multiclick');
 const { getDriver } = require('../helpers/getDriver');
-const { dropdown } = require('../helpers/dropdown');
 const { inputEntry } = require('../helpers/inputEntry');
 const { addResource } = require('../helpers/addResource');
-const { folderNames } = require('../helpers/folderNames');
 const { threeDotClick } = require('../helpers/threeDotClick');
 
 /**
@@ -79,11 +77,10 @@ async function bookshelf(browserName) {
             await driver.wait(until.elementLocated(By.xpath("//table[@class='otus-large-table bookshelf-table tablesorter']//tr[@class='ng-star-inserted']")), 6000);
             const bookRow = await driver.findElement(By.xpath("//table[@class='otus-large-table bookshelf-table tablesorter']//tr[@class='ng-star-inserted']"));
             await multiClick(driver, bookRow, 1);
-            await driver.sleep(2000);
 
         console.log('---Click on the link in the modal--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[@class='attachment-tile__link ng-star-inserted']")), 1000);
-            const modalLink = await driver.findElement(By.xpath("//div[@class='attachment-tile__link ng-star-inserted']"));
+            await driver.sleep(8000);
+            const modalLink = await driver.findElement(By.xpath("//a[@class='tile-attachment-external-file-link']"));
             await multiClick(driver, modalLink, 1);
 
         console.log('---Close the new PDF window and revert back to the Otus page--- \n');
@@ -114,114 +111,17 @@ async function bookshelf(browserName) {
             await addResource(driver);
         
         console.log('---Click on the Resource dropdown line item --- \n');
-            await dropdown(driver);
-
-        console.log('---Click on the upload resource type--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[5]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]")), 2000);
-            const uploadBtn = await driver.findElement(By.xpath("//div[5]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]"));
-            await multiClick(driver, uploadBtn, 1);
-
-        console.log('---Click attachment button, enter www.google.com as the link, Google as the link name, and press Save --- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[5]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]")), 2000);
-            const attachBtn = await driver.findElement(By.xpath("//div[5]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]"));
-            await multiClick(driver, attachBtn, 1);
-
-        console.log('---Enter www.google.com as the link in the first input box in the modal--- \n');
-             await driver.findElement(By.xpath("//div[@class='attach-link__content-input']//input[@class='attach-link__input ng-untouched ng-pristine ng-valid']")).sendKeys('www.google.com', Key.RETURN);
-
-        console.log('---Enter Google as the link name in the second input box in the modal--- \n');
-             await driver.wait(until.elementLocated(By.xpath("//input[@class='attach-link__input ng-untouched ng-pristine ng-valid']")), 2000);
-             await driver.findElement(By.xpath("//input[@class='attach-link__input ng-untouched ng-pristine ng-valid']")).sendKeys('Google', Key.ENTER);
-
-        console.log('---Click Save--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='otus-button icon-button dark attach-link__save ng-star-inserted']")), 2000);
-            const saveBtn = await driver.findElement(By.xpath("//button[@class='otus-button icon-button dark attach-link__save ng-star-inserted']"));
-            await multiClick(driver, saveBtn, 1);
-
-        console.log('---Click add Youtube button and enter corresponding data--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[6]//div[5]")), 2000);
-            const youtube = await driver.findElement(By.xpath("//div[6]//div[5]"));
-            await multiClick(driver, youtube, 1);
-            await driver.sleep(4000);
-            await driver.findElement(By.xpath("//div[@class='attach-link__content-input']//input[@class='ng-untouched ng-pristine ng-valid']")).sendKeys('https://www.youtube.com/watch?v=nSHH9-5b4JY', Key.RETURN);
-            await driver.wait(until.elementLocated(By.xpath("//input[@class='ng-pristine ng-valid ng-touched']")), 1000);
-            const youtubeBtn = await driver.findElement(By.xpath("//input[@class='ng-pristine ng-valid ng-touched']"))
-            multiClick(driver, youtubeBtn, 1);
-            await driver.findElement(By.xpath("//input[@class='ng-pristine ng-valid ng-touched']")).sendKeys('Youtube Video', Key.RETURN);
-
-        console.log('---Click the save button for the YouTube video--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='otus-button icon-button dark attach-link__save ng-star-inserted']")), 1000);
-            const saveYoutubeBtn = await driver.findElement(By.xpath("//button[@class='otus-button icon-button dark attach-link__save ng-star-inserted']"));
-            multiClick(driver, saveYoutubeBtn, 1);
-
-        console.log('---Click add audio button--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[6]//div[6]")), 2000);
-            const audio = await driver.findElement(By.xpath("//div[6]//div[6]"));
-            await multiClick(driver, audio, 1);
-            await driver.sleep(4000);
-
-        console.log('---Click the audio recording button--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[@class='row text-center']//button[@class='otus-button icon-button dark ng-star-inserted']")), 2000);
-            const audioRecording = await driver.findElement(By.xpath("//div[@class='row text-center']//button[@class='otus-button icon-button dark ng-star-inserted']"));
-            await multiClick(driver, audioRecording, 1);
-         
-        console.log('---Click on the microphone--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='vjs-record vjs-device-button vjs-control vjs-icon-audio-perm']")), 4000);
-            const microphoneBtn = await driver.findElement(By.xpath("//button[@class='vjs-record vjs-device-button vjs-control vjs-icon-audio-perm']"));
-            await multiClick(driver, microphoneBtn, 1);
-
-        console.log('---Click the record button and speak--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='vjs-record-button vjs-control vjs-button vjs-icon-record-start']")), 5000);
-            const recorder = await driver.findElement(By.xpath("//button[@class='vjs-record-button vjs-control vjs-button vjs-icon-record-start']"));
-            await multiClick(driver, recorder, 1);
-
-        console.log('---Click the stop recording button--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='vjs-record-button vjs-control vjs-button vjs-icon-record-stop']")), 8000);
-            const stopRecording = await driver.findElement(By.xpath("//button[@class='vjs-record-button vjs-control vjs-button vjs-icon-record-stop']"));
-            await multiClick(driver, stopRecording, 1);
-
-        console.log('---Press play to listen to the audio--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//button[@class='vjs-play-control vjs-control vjs-button vjs-paused']//span[@class='vjs-icon-placeholder']")));
-            const play = await driver.findElement(By.xpath("//button[@class='vjs-play-control vjs-control vjs-button vjs-paused']//span[@class='vjs-icon-placeholder']"));
-            await multiClick(driver, play, 1);
-        
-        console.log('---Type in a title for the audio recording--- \n');
-            await driver.findElement(By.xpath("//input[@class='attach-audio__input ng-untouched ng-pristine ng-valid']")).sendKeys('Recording1', Key.RETURN);
-
-        console.log('---Press the Save button--- \n');
-            await driver.wait(until.elementLocated(By.xpath(" //div[@class='row margin-top-30 margin-bottom-50 ng-star-inserted']//button[@class='otus-button icon-button dark ng-star-inserted']")), 4000);
-            const saveAudioBtn = await driver.findElement(By.xpath(" //div[@class='row margin-top-30 margin-bottom-50 ng-star-inserted']//button[@class='otus-button icon-button dark ng-star-inserted']"));
-            await multiClick(driver, saveAudioBtn, 1);
+            await driver.wait(until.elementLocated(By.xpath("//div[@id='outerWrapper']//div[@class='ui-overlaypanel-content']//div[1]//span[1]")), 8000);
+            const resourceDropdown = await driver.findElement(By.xpath(" //div[@id='outerWrapper']//div[@class='ui-overlaypanel-content']//div[1]//span[1]"));
+            await multiClick(driver, resourceDropdown, 1, 2000);
         
         console.log('---Click Google Drive button; do not log in for this test --- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[6]//div[7]")), 2000);
-            const googleDrive = await driver.findElement(By.xpath("//div[6]//div[7]"));
+            await driver.wait(until.elementLocated(By.xpath("//body[1]/div[5]/div[1]/div[1]/ot-drag-drop-area[1]/div[1]/ot-attach-wrapper[1]/div[1]/div[1]/div[1]/div[7]")), 2000);
+            const googleDrive = await driver.findElement(By.xpath("//body[1]/div[5]/div[1]/div[1]/ot-drag-drop-area[1]/div[1]/ot-attach-wrapper[1]/div[1]/div[1]/div[1]/div[7]"));
             await multiClick(driver, googleDrive, 1);
 
-        console.log('---Click add from OneDrive button and click back button--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[6]//div[8]")), 2000);
-            const oneDrive = await driver.findElement(By.xpath("//div[6]//div[8]"));
-            await multiClick(driver, oneDrive, 1);
-            await driver.sleep(4000);
-            await driver.wait(until.elementLocated(By.xpath("//div[@class='attach-link']//i[@class='fa fa-arrow-left ng-star-inserted']")), 1000);
-            const closeOneDrive = await driver.findElement(By.xpath("//div[@class='attach-link']//i[@class='fa fa-arrow-left ng-star-inserted']"));
-            await multiClick(driver, closeOneDrive, 1);
-
-        console.log('---Click close button on resource type modal--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//div[6]//ot-modal-navbar[1]//div[3]//*[local-name()='svg']")), 2000);
-            const closeModal = await driver.findElement(By.xpath("//div[6]//ot-modal-navbar[1]//div[3]//*[local-name()='svg']"));
-            await multiClick(driver, closeModal, 1);
-
-        console.log('---Click add resource button again--- \n');
-            await addResource(driver);
-    
-        console.log('---Click Folder and enter 3 folder names--- \n');
-            await folderNames(driver);
-
-        console.log('---Click add resource button once more and click Folder--- \n');
-            await addResource(driver);
-        
         console.log('---Click on the 3 dots in the Resource table--- \n');
+        //LEFT OFF HERE -- ERRORS
             await threeDotClick(driver);
 
         console.log('---Click Share, then click Cancel --- \n');
@@ -298,7 +198,6 @@ async function bookshelf(browserName) {
             await multiClick(driver, driveTab, 1);
 
         console.log('---Test is complete--- \n');
-        
     }
     catch(err) {
         console.log('----ERROR--- \n');
