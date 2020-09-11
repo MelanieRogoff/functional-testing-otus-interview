@@ -35,7 +35,7 @@
 - RUN LESSONS TEST (NON-HEADLESS):
     - npm run lessons
 
-#OF NOTE: 
+# OF NOTE: 
 
 - When testing My Bookshelf, for best results regarding testing the PDF link, please use the NON-HEADLESS option.
 
