@@ -34,29 +34,34 @@ async function assessment(browserName) {
             await openClose(driver, openSecondBtn, closeSecondBtn, 3, 4000); 
 
         console.log('---Click the second field once more---\n');
-           await multiClick(driver, openSecondBtn, 1, 4000);
+            await driver.sleep(6000);
+            await multiClick(driver, openSecondBtn, 1);
 
         console.log('--This time, click the Start button-');
+            await driver.sleep(6000);
             const startBtn = await driver.findElement(By.xpath("//span[contains(text(),'Start')]"), 3000);
-            await multiClick(driver, startBtn, 1, 2000);
+            await multiClick(driver, startBtn, 1);
+            await driver.sleep(6000);
 
         console.log('---Type a word into the text area. Click the Save and Exit button. Do not click Submit due to the scope of this assignment.');
-            await driver.sleep(3000);
-            await driver.findElement(By.tagName("textarea")).sendKeys('Lesson', Key.RETURN);
+            await driver.findElement(By.xpath("//textarea[@class='default ng-untouched ng-pristine ng-valid']")).sendKeys('Lesson', Key.RETURN);
             const saveExitBtn = await driver.findElement(By.xpath("//span[contains(text(),'Save & Exit')]"), 4000);
             await saveExitBtn.click();
 
         console.log('---The Save and Exit button has been clicked. Click No button--- \n');
+            await driver.sleep(6000);
             const noBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[2]//button[1]"), 2000);
             await multiClick(driver, noBtn, 1);
             await driver.sleep(6000);
             
         console.log('---Type a word into the textarea, click Save and Exit button, then click the Yes button--- \n');
+            await driver.wait(until.elementLocated(By.tagName("textarea")), 8000);
             await driver.findElement(By.tagName("textarea")).sendKeys('Save', Key.RETURN);
-            await driver.sleep(1000);
+            await driver.sleep(7000);
             await saveExitBtn.click();
             const yesBtn = await driver.findElement(By.xpath("//div[@class='reveal-overlay']//otus-button[1]//button[1]"), 2000);
             await yesBtn.click();
+            await driver.sleep(7000);
             
         console.log('---Step 1.i, part 4: Click through the third field under the Title column 3 times--- \n');
             await driver.wait(until.elementLocated(By.xpath("//td[contains(text(),'Tech Challenge - Functional Test Automation')]")), 20000);
@@ -65,6 +70,7 @@ async function assessment(browserName) {
             await openClose(driver, thirdTitleElemBtn, closeThirdBtn); 
 
         console.log('---Click the third field once more and press the Start button---\n');
+            await driver.sleep(6000);
             await thirdTitleElemBtn.click();
             await driver.sleep(3000);
             const startBtn2 = await driver.findElement(By.xpath("//span[contains(text(),'Start')]"), 3000);
