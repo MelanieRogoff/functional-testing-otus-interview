@@ -22,18 +22,24 @@
 
 - RUN ASSESSMENTS TEST (NON-HEADLESS):
     - npm run assessment
+    
+- RUN CLASSBOARD TEST (HEADLESS):
+    - npm run headlessClassboard
 
-- RUN MY BOOKSHELF TEST (HEADLESS):
-    - npm run headlessBookshelf
-
-- RUN MY BOOKSHELF TEST (NON-HEADLESS):
-    - npm run bookshelf
+- RUN CLASSBOARD TEST (NON-HEADLESS):
+    - npm run classboard
 
 - RUN LESSONS TEST (HEADLESS):
     - npm run headlessLessons
 
 - RUN LESSONS TEST (NON-HEADLESS):
     - npm run lessons
+
+- RUN MY BOOKSHELF TEST (HEADLESS):
+    - npm run headlessBookshelf
+
+- RUN MY BOOKSHELF TEST (NON-HEADLESS):
+    - npm run bookshelf
 
 # NOTE: 
 
@@ -45,7 +51,6 @@
 
  - When logging in with invalid credentials, an alert displays that notifies the user of the invalid credentials. Upon entering the correct credentials and logging in, however, the alert still displays. The alert does not disappear unless the user manually clicks the Close button.
 
-
 # INCOMPLETE: 
 
  - Testing all Resource Types except for Google Drive in the My Bookshelf section
@@ -54,6 +59,6 @@
 
  - Testing the hover functionality in order to trigger the triple dot area in the resource row in My Bookshelf (hover seems to only be accessible through Java/Python. This test uses JavaScript only)
 
- - Testing the class board 
+ - Testing the Join Class button, Load More button, inputs, and dropdown in the Classboard section 
 
  - Testing the gradebook

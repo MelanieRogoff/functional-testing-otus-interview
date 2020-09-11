@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "assessment": "cd src/test-files && HEADLESS=false node runAssessment.js",
     "bookshelf": "cd src/test-files && HEADLESS=false node runBookshelf.js",
+    "classboard": "cd src/test-files && HEADLESS=false node runClassboard.js",
     "lessons": "cd src/test-files && HEADLESS=false node runLessons.js",
     "headlessAssessment": "cd src/test-files && HEADLESS=true node runAssessment.js",
     "headlessBookshelf": "cd src/test-files && HEADLESS=true node runBookshelf.js",
+    "headlessClassboard": "cd src/test-files && HEADLESS=true node runClassboard.js",
     "headlessLessons": "cd src/test-files && HEADLESS=true node runLessons.js"
   },
   "repository": {
