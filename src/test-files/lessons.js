@@ -1,10 +1,8 @@
-const { By, until } = require('selenium-webdriver');
+const { By, Key, until } = require('selenium-webdriver');
 const { login } = require('../helpers/login');
 const { multiClick } = require('../helpers/multiclick');
 const { getDriver } = require('../helpers/getDriver');
 const { saveExitLessons } = require('../helpers/saveExitLessons');
-const { lessonsInputEntry } = require('../helpers/lessonsInputEntry');
-const { dropdownClick } = require('../helpers/dropdownClick');
 
 /**
  * Description: lessons() tests the Lessons section of the coding challenge.
@@ -16,10 +14,11 @@ async function lessons(browserName) {
     try {
         console.log('---Begin by logging in with pre-determined user--- \n');
             await login(driver);
-            await driver.sleep(6000);
+            await driver.sleep(9000);
 
         console.log('---Click the navbar item tied to Lessons 3 times--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//li[4]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']")), 29000);
+            await driver.sleep(8000);
+            await driver.wait(until.elementLocated(By.xpath("//li[4]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']")), 19000);
             const lessonsBtn = await driver.findElement(By.xpath("//li[4]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']"));
             await multiClick(driver, lessonsBtn);
 
@@ -76,18 +75,33 @@ async function lessons(browserName) {
 
         console.log('---Click Save and Exit button to go back to main Lessons page--- \n');
             saveExitLessons(driver);
-            await driver.sleep(7000);
 
         console.log('---Enter 3 different inputs into the search box in the main Lessons page--- \n');
-            lessonsInputEntry(driver);
-            await driver.sleep(8000);
-        
-        // console.log('---Click on the dropdown icon. Then, click on the first dropdown item. Finally, click on the second dropdown item.--- \n');
-        //     const path = "//i[@class='fa fa-chevron-down ng-star-inserted']"; 
-        //     const path1 = "//li[1]//div[1]"; 
-        //     const path2 = "//p[contains(text(),'QA Tech Challenge')]"; //if fails, try:  //li[2]//div[1]
-        //     await dropdownClick(driver, path, path1, path2);
-        //     await driver.sleep(7000);
+            await driver.sleep(6000);
+            await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='Search']")), 49000);
+            await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('123', Key.RETURN);
+            await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('ABC123!', Key.RETURN);
+            await driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys('Resources', Key.RETURN);   
+            
+        console.log('---Click on the dropdown icon--- \n');
+            await driver.wait(until.elementLocated(By.xpath("//i[@class='fa fa-chevron-down ng-star-inserted']")), 9000);
+            const dropIcon = await driver.findElement(By.xpath("//i[@class='fa fa-chevron-down ng-star-inserted']"));
+            await multiClick(driver, dropIcon, 1);
+
+        console.log('---Click on the first dropdown item --- \n');
+            await driver.sleep(4000);
+            await driver.wait(until.elementsLocated(By.xpath("//li[1]//div[1]")), 9000);
+            const drop1 = await driver.findElement(By.xpath("//li[1]//div[1]"));
+            await multiClick(driver, drop1, 1, 2000);
+
+        console.log('---Click on the second dropdown item --- \n');
+            await driver.wait(until.elementLocated(By.xpath("//div[@class='placeholder-div']")), 9000);
+            const clickPlaceholder = await driver.findElement(By.xpath("//div[@class='placeholder-div']"));
+            await multiClick(driver, clickPlaceholder, 1);
+            await driver.sleep(6000);
+            await driver.wait(until.elementsLocated(By.xpath("//p[contains(text(),'QA Tech Challenge')]")), 9000);
+            const drop2 = await driver.findElement(By.xpath("//p[contains(text(),'QA Tech Challenge')]"));
+            await multiClick(driver, drop2, 1);
 
         console.log('---Test is complete--- \n');
     }

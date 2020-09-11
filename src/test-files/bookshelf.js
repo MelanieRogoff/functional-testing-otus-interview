@@ -43,7 +43,7 @@ async function bookshelf(browserName) {
         console.log('---Click on the dropdown icon. Then, click on the first dropdown item. Finally, click on the second dropdown item.--- \n');
             const path = "//i[@class='fa fa-search ng-star-inserted']";
             const path1 = "//div[@id='otus-search-dropdown']//li[@class='ng-star-inserted']";
-            const path2 = "main.logged-in-user:nth-child(3) div.main-container-wrap.logged-in-user div.container:nth-child(1) ng-component.ng-star-inserted:nth-child(2) shared-bookshelf.ng-star-inserted:nth-child(2) div.page-wrapper:nth-child(1) div.my-bookshelf div.my-bookshelf__header.ng-star-inserted div.my-bookshelf__header__container1 class-dropdown.ng-star-inserted:nth-child(2) div.class-dropdown ot-search-multi-select.ng-star-inserted div.ot-multiselect-wrap div.ot-dropdown.ng-star-inserted ul:nth-child(1) > li.ng-star-inserted";
+            const path2 = "//p[contains(text(),'QA Tech Challenge')]";
             await dropdownClick(driver, path, path1, path2);
 
         console.log('---Enter numeric, special character, and regular character values into the input box--- \n');

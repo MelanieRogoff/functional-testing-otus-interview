@@ -278,7 +278,7 @@ async function assessment(browserName) {
 
         console.log('---Step 1.i, part 7c: Click through the third Status field item 3 times--- \n');
             await driver.sleep(4000);
-            await driver.wait(until.elementLocated(By.xpath("//tr[3]//td[5]//otus-status[1]//div[1]//div[1]")), 2000);
+            await driver.wait(until.elementLocated(By.xpath("//tr[3]//td[5]//otus-status[1]//div[1]//div[1]")), 7000);
             const stat3Btn = await driver.findElement(By.xpath("//tr[3]//td[5]//otus-status[1]//div[1]//div[1]"));
             const closeStat3Btn = await driver.findElement(By.xpath("//div[@class='reveal otus-new-modal small instructions-modal']//div[@class='otus-new-modal__close-button smallX ng-star-inserted']//*[local-name()='svg']"), 2000);
             await openClose(driver, stat3Btn, closeStat3Btn);

@@ -18,8 +18,8 @@ async function dropdownClick(driver, path, path1, path2) {
 
     //Click on the second dropdown item
         await multiClick(driver, dropIcon, 1, 2000);
-        await driver.wait(until.elementsLocated(By.css(path2)), 4000);
-        const drop2 = await driver.findElement(By.css(path2));
+        await driver.wait(until.elementsLocated(By.xpath(path2)), 4000);
+        const drop2 = await driver.findElement(By.xpath(path2));
         await multiClick(driver, drop2, 1);
         await driver.sleep(5000);
 }

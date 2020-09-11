@@ -1,6 +1,7 @@
 # functional-testing-otus-interview
 
-# FUNCTIONAL TEST - OTUS INTERVIEW
+# FUNCTIONAL TESTING - OTUS INTERVIEW
+
  - Suite of functional tests utilizing JavaScript and Selenium. 
     
  - Creates and runs automated tests for various situations and areas of the Otus app per coding challenge instructions. 
@@ -15,6 +16,7 @@
 - npm install
 
 # DEVELOPMENT:
+
 - RUN ASSESSMENTS TEST (HEADLESS):
     - npm run headlessAssessment
 
@@ -33,9 +35,16 @@
 - RUN LESSONS TEST (NON-HEADLESS):
     - npm run lessons
 
+#OF NOTE: 
+
+- When testing My Bookshelf, for best results regarding testing the PDF link, please use the NON-HEADLESS option.
+
+- FireFox does not scroll to the proper navigation item when testing My Bookshelf. For best results, please use Chrome for My Bookshelf.
+
 # BUG FOUND:
 
  - When logging in with invalid credentials, an alert displays that notifies the user of the invalid credentials. Upon entering the correct credentials and logging in, however, the alert still displays. The alert does not disappear unless the user manually clicks the Close button.
+
 
 # INCOMPLETE: 
 
