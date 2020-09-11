@@ -13,9 +13,9 @@ async function classboard(browserName) {
     try {
         console.log('---Begin by logging in with pre-determined user--- \n');
             await login(driver);
-            await driver.sleep(9000);
 
         console.log('---Click the navbar item tied to Classes 4 times--- \n');
+            await driver.sleep(8000);
             await driver.wait(until.elementLocated(By.xpath("//span[contains(text(),'Classes')]")), 19000);
             const classesBtn = await driver.findElement(By.xpath("//span[contains(text(),'Classes')]"));
             await multiClick(driver, classesBtn, 4, 8000);
@@ -41,6 +41,12 @@ async function classboard(browserName) {
             await driver.wait(until.elementLocated(By.xpath("//span[@class='ng-star-inserted']")), 2000);
             const qaTech = await driver.findElement(By.xpath("//span[@class='ng-star-inserted']"));
             await multiClick(driver, qaTech, 1);
+        
+        console.log('---Click on the Load More button--- \n');
+            await driver.sleep(5000);
+            await driver.wait(until.elementLocated(By.xpath("//div[@class='ot-class-board__load-more-button ng-star-inserted']//button")), 9000);
+            const loadMore = await driver.findElement(By.xpath("//div[@class='ot-class-board__load-more-button ng-star-inserted']//button"));
+            await multiClick(driver, loadMore, 1);
         
         console.log('---Click on the Welcome paragraph--- \n');
             await driver.sleep(6000);

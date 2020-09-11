@@ -59,6 +59,6 @@
 
  - Testing the hover functionality in order to trigger the triple dot area in the resource row in My Bookshelf (hover seems to only be accessible through Java/Python. This test uses JavaScript only)
 
- - Testing the Join Class button, Load More button, inputs, and dropdown in the Classboard section 
+ - Testing the Join Class button, inputs, and dropdown in the Classboard section 
 
  - Testing the gradebook
