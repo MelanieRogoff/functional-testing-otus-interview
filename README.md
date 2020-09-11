@@ -6,7 +6,7 @@
     
  - Creates and runs automated tests for various situations and areas of the Otus app per coding challenge instructions. 
 
-# FOR INSTALLATION (CHROME & FIREFOX ONLY):
+# INSTALLATION (CHROME & FIREFOX ONLY):
 
 - Install ChromeDriver with Google Chrome Version 85.0.4183.83 
 (http://chromedriver.storage.googleapis.com/index.html?path=85.0.4183.83/)
@@ -35,7 +35,7 @@
 - RUN LESSONS TEST (NON-HEADLESS):
     - npm run lessons
 
-# OF NOTE: 
+# NOTE: 
 
 - When testing My Bookshelf, for best results regarding testing the PDF link, please use the NON-HEADLESS option.
 
