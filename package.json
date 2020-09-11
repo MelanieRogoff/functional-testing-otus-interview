@@ -5,11 +5,12 @@
   "main": "src/test-files/assessment.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "assessment": "cd src/test-files && node assessment.js",
-    "bookshelf": "cd src/test-files && node bookshelf.js",
-    "lessons": "cd src/test-files && node lessons.js",
-    "seleniumStart": "cd src/test-files && HEADLESS=false node index.js",
-    "seleniumStartHeadless": "cd src/test-files && HEADLESS=true node index.js"
+    "assessment": "cd src/test-files && HEADLESS=false node runAssessment.js",
+    "bookshelf": "cd src/test-files && HEADLESS=false node runBookshelf.js",
+    "lessons": "cd src/test-files && HEADLESS=false node runLessons.js",
+    "headlessAssessment": "cd src/test-files && HEADLESS=true node runAssessment.js",
+    "headlessBookshelf": "cd src/test-files && HEADLESS=true node runBookshelf.js",
+    "headlessLessons": "cd src/test-files && HEADLESS=true node runLessons.js"
   },
   "repository": {
     "type": "git",

@@ -15,12 +15,23 @@
 - npm install
 
 # DEVELOPMENT:
-- RUN LOCALLY IN HEADLESS MODE:
-    - npm run seleniumStartHeadless
+- RUN ASSESSMENTS TEST (HEADLESS):
+    - npm run headlessAssessment
 
-- RUN LOCALLY IN NON-HEADLESS MODE:
-    - npm run seleniumStart
+- RUN ASSESSMENTS TEST (NON-HEADLESS):
+    - npm run assessment
 
+- RUN MY BOOKSHELF TEST (HEADLESS):
+    - npm run headlessBookshelf
+
+- RUN MY BOOKSHELF TEST (NON-HEADLESS):
+    - npm run bookshelf
+
+- RUN LESSONS TEST (HEADLESS):
+    - npm run headlessLessons
+
+- RUN LESSONS TEST (NON-HEADLESS):
+    - npm run lessons
 
 # BUG FOUND:
 

@@ -16,9 +16,10 @@ async function lessons(browserName) {
     try {
         console.log('---Begin by logging in with pre-determined user--- \n');
             await login(driver);
+            await driver.sleep(6000);
 
         console.log('---Click the navbar item tied to Lessons 3 times--- \n');
-            await driver.wait(until.elementLocated(By.xpath("//li[4]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']")), 9000);
+            await driver.wait(until.elementLocated(By.xpath("//li[4]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']")), 29000);
             const lessonsBtn = await driver.findElement(By.xpath("//li[4]//a[1]//ot-icon[1]//fa-icon[1]//*[local-name()='svg']"));
             await multiClick(driver, lessonsBtn);
 
@@ -75,13 +76,12 @@ async function lessons(browserName) {
 
         console.log('---Click Save and Exit button to go back to main Lessons page--- \n');
             saveExitLessons(driver);
+            await driver.sleep(7000);
 
         console.log('---Enter 3 different inputs into the search box in the main Lessons page--- \n');
             lessonsInputEntry(driver);
             await driver.sleep(8000);
         
-        console.log('---STOPPPPPP----');
-
         // console.log('---Click on the dropdown icon. Then, click on the first dropdown item. Finally, click on the second dropdown item.--- \n');
         //     const path = "//i[@class='fa fa-chevron-down ng-star-inserted']"; 
         //     const path1 = "//li[1]//div[1]"; 
